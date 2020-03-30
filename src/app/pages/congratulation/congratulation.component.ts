@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RouterModule, Router } from "@angular/router";
 
 @Component({
   selector: 'app-congratulation',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CongratulationComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router: Router
+    ) { }
 
   ngOnInit() {
   }
-
+  paso3(){
+    this.router.navigate(['/validacion']);
+}
 }
