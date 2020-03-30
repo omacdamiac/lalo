@@ -1,0 +1,8 @@
+/** No CSS for this example */
+
+// ::ng-deep .mat-checkbox .mat-checkbox-frame {
+//     border-color: #525252;
+// }
+::ng-deep .mat-checkbox-checked .mat-checkbox-background {
+    background-color: #4c1e50!important;
+}

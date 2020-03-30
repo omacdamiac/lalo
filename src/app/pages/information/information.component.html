@@ -1,0 +1,314 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+
+            <!-- <button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button> -->
+            <mat-horizontal-stepper class="row d-lg-flex d-block pt-lg-5 pt-1" [linear]="isLinear" #stepper>
+                <!-- Paso 1 -->
+                <mat-step [stepControl]="firstFormGroup">
+                    <form [formGroup]="firstFormGroup">
+                        <ng-template matStepLabel class="d-none d-lg-block">Datos personales</ng-template>
+                        <h6 class="d-none d-lg-block">Paso 1 de 5</h6>
+                        <h3>Datos personales</h3>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="dni">DNI</label>
+                                <input type="number" id="dni" name="dni" value="43454223" disabled class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="namedni">Nombre</label>
+                                <input type="text" id="namedni" name="namedni" value="Alejandro" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6 col-12">
+                                <label class="mb-0" for="paterno">Apellido paterno</label>
+                                <input type="text" id="paterno" name="paterno" value="Gomez" class="form-control">
+                            </div>
+
+                            <div class="col-lg-6 col-12">
+                                <label class="mb-0" for="materno">Apellido materno</label>
+                                <input type="text" id="materno" name="materno" value="Perez" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0 d-block" for="gender">Género</label>
+                                <mat-radio-group aria-label="Select an option">
+                                    <mat-radio-button color="primary" value="1">Femenino</mat-radio-button>
+                                    <mat-radio-button color="primary" value="2">Masculino</mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="fnacimiento">Fecha de nacimiento</label>
+                                <mat-form-field>
+                                    <input matInput [matDatepicker]="picker">
+                                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                    <mat-datepicker #picker></mat-datepicker>
+                                </mat-form-field>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvv">E-mail</label>
+                                <input type="email" id="cvv" name="cvv" placeholder="@.....com" class="form-control">
+                            </div>
+                        </div>
+                        <!-- <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Last name, First name" class="form-control" formControlName="firstCtrl" required>
+                        </mat-form-field> -->
+                        <!-- <div>
+                            <button mat-button matStepperNext>Next</button>
+                        </div> -->
+                        <!-- Btn mobile -->
+                        <div class="d-lg-none text-center fixed-bottom">
+                            <button mat-raised-button class="rounded-0 form-rp mb-lg-3 mt-lg-2 text-center col-4" type="reset">Cancelar</button>
+                            <button mat-raised-button color="primary" class="rounded-0 mr-lg-2 col-8 form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                        </div>
+                        <!-- End Btn mobile -->
+                        <!-- Btn desktop -->
+                        <div class="row text-center d-none d-lg-block">
+                            <button mat-raised-button color="primary" class=" mr-lg-2  form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                            <button mat-raised-button class="form-rp mb-lg-3 mt-lg-2 text-center" type="reset">Cancelar</button>
+                        </div>
+                        <!-- End Btn desktop -->
+                    </form>
+                </mat-step>
+                <!-- End Paso 1 -->
+
+                <!-- Paso 2 -->
+                <mat-step [stepControl]="secondFormGroup">
+                    <form [formGroup]="secondFormGroup">
+                        <ng-template matStepLabel>Dirección</ng-template>
+                        <h6 class="d-none d-lg-block">Paso 2 de 5</h6>
+                        <h3>Dirección</h3>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvdepav">Departamento</label>
+                                <mat-select class="form-control" disableRipple>
+                                    <mat-option value="1">Lima</mat-option>
+                                    <mat-option value="2">Piura</mat-option>
+                                    <mat-option value="3">Loreto</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="provincia">Provincia</label>
+                                <mat-select class="form-control" disableRipple>
+                                    <mat-option value="1">Lima</mat-option>
+                                    <mat-option value="2">Callao</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvv">Dirección</label>
+                                <input type="text" id="cvv" name="cvv" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvv">Detalles de la dirección / referencia</label>
+                                <input type="text" id="cvv" name="cvv" class="form-control">
+                            </div>
+                        </div>
+                        <!-- <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Last name, First name" class="form-control" formControlName="firstCtrl" required>
+                        </mat-form-field> -->
+                        <!-- <div>
+                            <button mat-button matStepperNext>Next</button>
+                        </div> -->
+                        <!-- Btn mobile -->
+                        <div class="d-lg-none text-center fixed-bottom">
+                            <button mat-raised-button class="rounded-0 form-rp mb-lg-3 mt-lg-2 text-center col-4" matStepperPrevious>Atras</button>
+                            <button mat-raised-button color="primary" class="rounded-0 mr-lg-2 col-8 form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                        </div>
+                        <!-- End Btn Mobile -->
+                        <!-- Btn desktop -->
+                        <div class="row text-center d-none d-lg-block">
+                            <button mat-raised-button color="primary" class=" mr-lg-2  form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                            <button mat-raised-button class="form-rp mb-lg-3 mt-lg-2 text-center" type="reset">Cancelar</button>
+                        </div>
+                        <!-- End Btn desktop -->
+                    </form>
+                </mat-step>
+                <!-- End Paso 2 -->
+
+                <!-- Paso 3 -->
+                <mat-step [stepControl]="secondFormGroup">
+                    <form [formGroup]="secondFormGroup">
+                        <ng-template matStepLabel>Datos laborales</ng-template>
+                        <h6 class="d-none d-lg-block">Paso 3 de 5</h6>
+                        <h3>Datos laborales</h3>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0 d-block" for="cvv">Nivel académico</label>
+                                <mat-radio-group aria-label="Select an option">
+                                    <mat-radio-button color="primary" value="1">Universitaria</mat-radio-button>
+                                    <mat-radio-button color="primary" value="2">Técnico</mat-radio-button>
+                                    <mat-radio-button color="primary" value="3">Secundaria</mat-radio-button>
+                                </mat-radio-group>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvv">Profesión u ocupación</label>
+                                <mat-select class="form-control" disableRipple>
+                                    <mat-option value="1">Abogado</mat-option>
+                                    <mat-option value="2">Administrador</mat-option>
+                                    <mat-option value="3">Marketing</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvv">Tipo de actividad</label>
+                                <mat-select class="form-control" disableRipple>
+                                    <mat-option value="1">Dependiente</mat-option>
+                                    <mat-option value="2">Independiente</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="claboral">Centro laboral</label>
+                                <input type="text" id="claboral" name="claboral" class="form-control">
+                            </div>
+                        </div>
+                        <!-- <mat-form-field>
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Last name, First name" class="form-control" formControlName="firstCtrl" required>
+                        </mat-form-field> -->
+                        <!-- <div>
+                            <button mat-button matStepperNext>Next</button>
+                        </div> -->
+                        <!-- Btn mobile -->
+                        <div class="d-lg-none text-center fixed-bottom">
+                            <button mat-raised-button class="rounded-0 form-rp mb-lg-3 mt-lg-2 text-center col-4" matStepperPrevious>Atras</button>
+                            <button mat-raised-button color="primary" class="rounded-0 mr-lg-2 col-8 form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                        </div>
+                        <!-- End Btn Mobile -->
+                        <!-- Btn desktop -->
+                        <div class="row text-center d-none d-lg-block">
+                            <button mat-raised-button color="primary" class=" mr-lg-2  form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                            <button mat-raised-button class="form-rp mb-lg-3 mt-lg-2 text-center" type="reset">Cancelar</button>
+                        </div>
+                        <!-- End Btn desktop -->
+                    </form>
+                </mat-step>
+                <!-- End Paso 3 -->
+
+                <!-- Paso 4 -->
+                <mat-step [stepControl]="secondFormGroup">
+                    <form [formGroup]="secondFormGroup">
+                        <ng-template matStepLabel>Verificación</ng-template>
+                        <h6 class="d-none d-lg-block">Paso 4 de 5</h6>
+                        <h3>Verificación</h3>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvv">Ingresa tu número de celular</label>
+                                <input type="number" id="cvv" name="cvv" value="43454223" class="form-control">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvv">Por favor, ingresa tu código</label>
+                                <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+                                    <mat-button-toggle value="1">1</mat-button-toggle>
+                                    <mat-button-toggle value="2">2</mat-button-toggle>
+                                    <mat-button-toggle value="3">3</mat-button-toggle>
+                                    <mat-button-toggle value="4">4</mat-button-toggle>
+                                    <mat-button-toggle value="5">5</mat-button-toggle>
+                                    <mat-button-toggle value="6">6</mat-button-toggle>
+                                </mat-button-toggle-group>
+                                <span class="mat-hint d-block">60 Seg</span>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <a href="#">Solicitar un código nuevo</a>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-lg-12 col-12">
+                                <p>¿No recibiste el sms?<br>Recíbelo por correo electrónico <a href="#">Aquí</a></p>
+                            </div>
+                        </div>
+
+                        <!-- Btn mobile -->
+                        <div class="d-lg-none text-center fixed-bottom">
+                            <button mat-raised-button class="rounded-0 form-rp mb-lg-3 mt-lg-2 text-center col-4" matStepperPrevious>Atras</button>
+                            <button mat-raised-button color="primary" class="rounded-0 mr-lg-2 col-8 form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                        </div>
+                        <!-- End Btn Mobile -->
+                        <!-- Btn desktop -->
+                        <div class="row text-center d-none d-lg-block">
+                            <button mat-raised-button color="primary" class=" mr-lg-2  form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                            <button mat-raised-button class="form-rp mb-lg-3 mt-lg-2 text-center" type="reset">Cancelar</button>
+                        </div>
+                        <!-- End Btn desktop -->
+                    </form>
+                </mat-step>
+                <!-- End Paso 4 -->
+
+                <!-- Paso 5 -->
+                <mat-step [stepControl]="secondFormGroup">
+                    <form [formGroup]="secondFormGroup">
+                        <ng-template matStepLabel>Estado de cuenta</ng-template>
+                        <h6 class="d-none d-lg-block">Paso 5 de 5</h6>
+                        <h3>Estado de cuenta</h3>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <p>Seleccione la fecha de pago de la tarjeta y envío de documentación</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvv">Fecha de pago</label>
+                                <mat-select class="form-control" disableRipple>
+                                    <mat-option value="1">5</mat-option>
+                                    <mat-option value="2">20</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="col-lg-12 col-12">
+                                <label class="mb-0" for="cvv">Recepción de estado de cuenta</label>
+                                <mat-select class="form-control" disableRipple>
+                                    <mat-option value="1">E-mail</mat-option>
+                                    <mat-option value="2">Domicilio</mat-option>
+                                </mat-select>
+                            </div>
+                        </div>
+                        <!-- Btn mobile -->
+                        <div class="d-lg-none text-center fixed-bottom">
+                            <button mat-raised-button class="rounded-0 form-rp mb-lg-3 mt-lg-2 text-center col-4" matStepperPrevious>Atras</button>
+                            <button mat-raised-button color="primary" class="rounded-0 mr-lg-2 col-8 form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                        </div>
+                        <!-- End Btn Mobile -->
+                        <!-- Btn desktop -->
+                        <div class="row text-center d-none d-lg-block">
+                            <button mat-raised-button color="primary" class=" mr-lg-2  form-rp mb-lg-3 mt-lg-2 text-center" matStepperNext>Continuar <mat-icon class="d-inline d-lg-none">keyboard_backspace</mat-icon></button>
+                            <button mat-raised-button class="form-rp mb-lg-3 mt-lg-2 text-center" type="reset">Cancelar</button>
+                        </div>
+                        <!-- End Btn desktop -->
+                        <!-- <div>
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button (click)="stepper.reset()">Reset</button>
+                        </div> -->
+                    </form>
+                </mat-step>
+                <!-- End Paso 5 -->
+            </mat-horizontal-stepper>
+        </div>
+    </div>
+</div>

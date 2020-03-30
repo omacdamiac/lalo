@@ -1,1 +1,399 @@
-/* You can add global styles to this file, and also import other style files */
+@import './assets/scss/fonts';
+@import './assets/scss/variable';
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat'!important;
+    background-color: $bg!important;
+}
+
+button {
+    &.form-rp {
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-family: 'Montserrat'!important;
+        line-height: 48px;
+        @media (max-width: 768px) {
+            line-height: 58px;
+            font-size: 15px;
+        }
+    }
+    &[color*="primary"] {
+        background-color: $purple!important;
+        font-size: 18px;
+        letter-spacing: 1px;
+        font-family: 'Montserrat'!important;
+        // width: 195px;
+        line-height: 48px;
+        &:hover {
+            background-color: $purple-hover!important;
+        }
+        @media (max-width: 768px) {
+            line-height: 58px;
+            font-size: 15px;
+        }
+        mat-icon {
+            color: white;
+            position: absolute;
+            top: 16px;
+            -ms-transform: rotate(180deg);
+            /* IE 9 */
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.txt {
+    font-size: 21px;
+    line-height: 20px;
+    font-family: 'Montserrat Light';
+    @media (max-width: 768px) {
+        font-size: 15px;
+    }
+}
+
+.credit {
+    font-family: 'Montserrat Bold';
+    font-size: 26px;
+    color: $purple-hover;
+    span {
+        font-size: 14px;
+    }
+}
+
+.banner {
+    height: 130px;
+    background: rgb(82, 49, 120);
+    background: -moz-linear-gradient(0deg, rgba(82, 49, 120, 1) 0%, rgba(140, 71, 153, 1) 100%);
+    background: -webkit-linear-gradient(0deg, rgba(82, 49, 120, 1) 0%, rgba(140, 71, 153, 1) 100%);
+    background: linear-gradient(0deg, rgba(82, 49, 120, 1) 0%, rgba(140, 71, 153, 1) 100%);
+    color: white;
+    font-family: 'Montserrat Italic';
+    // box-sizing: content-box;
+}
+
+h {
+    &2 {
+        font-family: 'Montserrat Light';
+        font-weight: lighter;
+        color: $purple;
+        & b {
+            font-family: 'Montserrat Semibold';
+            font-weight: 400;
+        }
+        @media (max-width: 768px) {
+            font-size: 20px!important;
+        }
+    }
+    &3 {
+        font-size: 30px;
+        color: $purple-light;
+        @media (max-width: 768px) {
+            font-size: 16px!important;
+        }
+    }
+    &4 {
+        font-family: 'Montserrat Bold';
+        color: $purple-hover;
+        font-weight: bold;
+    }
+    &5.card-title {
+        font-family: 'Montserrat Light'!important;
+        color: $gray-subtitle;
+        font-size: 15px!important;
+    }
+    &6 {
+        font-family: 'Montserrat Light';
+        font-weight: lighter;
+        line-height: 28px;
+        color: $gray;
+        & b {
+            font-family: 'Montserrat';
+            font-weight: normal;
+        }
+        @media (max-width: 768px) {
+            font-size: 15px!important;
+        }
+    }
+}
+
+.card {
+    background-color: #F4F6F6!important;
+    border-color: 1px solid #E4E4E4!important;
+}
+
+span.mat-hint {
+    font-size: 12px;
+    line-height: 14px;
+    color: $gray-hint;
+    font-family: 'Montserrat Light';
+    span {
+        font-size: 18px;
+    }
+    a {
+        color: $purple;
+        text-decoration: underline;
+    }
+}
+
+label {
+    color: $gray-label;
+    font-size: 14px;
+    font-family: 'Montserrat';
+    mat-icon {
+        font-size: 16px !important;
+        height: auto!important;
+        width: auto!important;
+        cursor: pointer;
+    }
+    &.mat-radio-label {
+        margin-bottom: 0;
+        font-family: 'Montserrat Medium';
+    }
+}
+
+.mat {
+    &-icon {
+        color: $gray-label;
+        float: right;
+        cursor: pointer;
+        &:hover>img {
+            display: block;
+        }
+        & {
+            position: relative;
+        }
+        &>img {
+            display: none;
+            position: absolute;
+            top: -1em;
+            left: 2em;
+            @media (max-width: 768px) {
+                top: -3.5em;
+                left: -3em;
+            }
+        }
+        &>img {
+            display: none;
+        }
+    }
+    &-hint {
+        font-size: 12px;
+        line-height: 14px;
+        color: $gray-hint;
+        font-family: 'Montserrat Light';
+        span {
+            font-size: 18px;
+        }
+        a {
+            color: $purple;
+            text-decoration: underline;
+        }
+    }
+    &-checkbox {
+        &-inner-container {
+            margin-top: 4px!important;
+            height: 20px!important;
+            width: 20px!important;
+            &:checked {
+                background-color: red!important;
+            }
+        }
+        &-label {
+            font-family: 'Montserrat Light';
+            font-size: 14px;
+            color: $gray-label;
+            white-space: pre-line;
+            a {
+                color: $purple;
+                text-decoration: underline;
+            }
+            @media (max-width: 768px) {
+                font-size: 12px!important;
+            }
+        }
+    }
+}
+
+///RAdiobutton
+.radio {
+    &-group-rp {
+        display: flex;
+        flex-direction: column;
+        margin-top: 0px;
+        margin-bottom: 15px;
+        width: fit-content;
+    }
+    &-button-rp {
+        margin: 5px;
+    }
+}
+
+//DAteìcker
+.mat {
+    &-form-field-flex {
+        align-items: center!important;
+    }
+    &-form-field-suffix {
+        width: 50px;
+    }
+    &-form-field-infix {
+        padding: 0px!important;
+        margin: 0px;
+        border: 0;
+        input {
+            height: 35px!important;
+            padding-left: 5px;
+        }
+    }
+    &-icon-button {
+        svg.mat-datepicker-toggle-default-icon.ng-star-inserted {
+            width: 50px!important;
+        }
+    }
+    &-form-field {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+    &-form-field-underline {
+        display: none
+    }
+}
+
+mat-button-toggle-group {
+    border: 0!important
+}
+
+mat-button-toggle {
+    border-radius: 4px;
+    border: 1px solid #6BB81E!important;
+    font-size: 22px;
+    color: #737373!important;
+    margin-right: 3px;
+    ;
+}
+
+///stepper en desktop
+.mat-stepper-horizontal-line {
+    @media (min-width: 768px) {
+        display: none;
+    }
+}
+
+.mat-stepper-horizontal {
+    @media (min-width: 768px) {
+        background-color: transparent;
+    }
+}
+
+.mat-horizontal-stepper-header {
+    height: 40px!important;
+}
+
+.mat-horizontal-stepper-header-container {
+    display: flex;
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
+
+.mat-step-icon-state-number {
+    @media (min-width: 768px) {
+        display: none!important;
+    }
+}
+
+.mat-step-label {
+    font-family: 'Montserrat Light';
+    color: #D4D4D4!important;
+    &:before {
+        font-size: 20px;
+        content: '➜ ';
+    }
+}
+
+.mat-step-label-selected {
+    font-family: 'Montserrat Light';
+    color: $purple-light!important;
+    &:before {
+        font-size: 20px!important;
+        content: '➜ '!important;
+    }
+}
+
+.mat-horizontal-stepper-header-container {
+    @media (min-width: 768px) {
+        -webkit-box-flex: 0;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        display: block!important;
+    }
+}
+
+.mat-horizontal-content-container {
+    @media (min-width: 768px) {
+        -webkit-box-flex: 0;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+        // flex: 0 0 66.666667%;
+        // max-width: 66.666667%;
+        position: relative;
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+}
+
+///STEPPER
+.mat {
+    &-horizontal-stepper-content {
+        input,
+        .mat-select {
+            font-size: 14px;
+            color: $input-gray;
+            font-family: 'Montserrat Light';
+            &[disabled] {
+                color: $input-disabled;
+            }
+            @media (max-width: 768px) {
+                height: 48px;
+                line-height: 37px;
+            }
+        }
+        label {
+            font-family: 'Montserrat Light';
+            margin-top: 20px;
+        }
+    }
+    &-stepper-horizontal {
+        margin-top: 8px;
+    }
+    &-form-field {
+        margin-top: 16px;
+    }
+    &-step-label {
+        font-family: 'Montserrat';
+        @media (max-width: 768px) {
+            display: none!important
+        }
+    }
+}

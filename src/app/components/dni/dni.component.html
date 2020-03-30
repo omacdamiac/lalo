@@ -1,0 +1,65 @@
+<form>
+    <!-- card -->
+    <div class="card mb-4 mb-lg-0">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h5 class="card-title mt-lg-4 mb-lg-4 mt-2 mb-3 text-center">Conoce si tienes una tarjeta preaprobada*<br class="d-none d-lg-block"> ¡Es fácil y rápido!</h5>
+                </div>
+                <div class="col-lg-10 offset-lg-1">
+                    <div class="row">
+                        <div class="col-lg-7 col-7 pr-0">
+                            <label class="mb-0" for="dni">DNI</label>
+                            <input type="number" id="dni" name="dni" class="form-control" maxlength="7" formControlName="dni" required>
+                            <!-- <div *ngIf="angForm.get('dni').errors && angForm.get('dni').dirty">
+                                <p *ngIf="angForm.get('dni').hasError('required')">requerido</p>
+                                <p *ngIf="angForm.get('dni').hasError('maxlength')">Max 7</p>
+                            </div> -->
+                            <!-- <div *ngIf="angForm.controls['dni'].invalid && (angForm.controls['name'].dirty || angForm.controls['dni'].touched)" class="alert alert-danger">
+                                <div *ngIf="angForm.controls['dni'].errors.required">Dni es requerido</div>
+                            </div> -->
+
+                        </div>
+                        <div class="col-lg-1 col-1 p-0 text-center">
+                            <label for="">&nbsp;</label>
+                            <p>-</p>
+                        </div>
+                        <div class="col-lg-4 col-4 pl-0">
+                            <label class="mb-0" for="cvv">Dígito</label>
+                            <mat-icon aria-hidden="false" aria-label="info_outline icon">info_outline <img src="../assets/images/cui.png" alt="CUI" /></mat-icon>
+
+                            <input type="number" id="cvv" name="cvv" class="form-control">
+                        </div>
+                        <!-- Btn mobile -->
+                        <div class="col-12 d-block d-lg-none">
+                            <button mat-raised-button type="submit" color="primary" class="rounded-0 mb-1 mt-2 text-center w-100">Consultar</button>
+                        </div>
+                        <!-- End Btn mobile -->
+
+
+                        <p class="col-lg-12 mt-4 mb-4">
+                            <mat-checkbox>He leido y autorizo el <a href="#">Tratamiento de Datos personales</a></mat-checkbox>
+                        </p>
+
+                        <div class="ml-2 mt-2 d-lg-none d-block">
+                            <span class="mat-hint ml-2"><span>*</span> Sujeto a eveluación crediticia</span>
+                        </div>
+
+                    </div>
+
+                    <!-- Btn desktop -->
+                    <div class="text-center">
+                        <!-- <button mat-raised-button type="submit" [disabled]="angForm.invalid" color="primary" class="d-none d-lg-inline mb-3 mt-2 text-center col-lg-6 offset-lg-4">Enviar</button> -->
+                        <button mat-raised-button type="submit" color="primary" class="d-none d-lg-inline mb-3 mt-2 text-center col-lg-6 offset-lg-4">Enviar</button>
+                    </div>
+                    <!-- End Btn desktop -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End card-->
+    <div class="mt-4 d-none d-lg-block">
+        <span class="mat-hint"><span>*</span> Sujeto a eveluación crediticia</span>
+    </div>
+</form>
